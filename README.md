@@ -6,7 +6,7 @@ With this allocator, now we can use GTT (host memory) with PyTorch, and there is
 
 ## Usage
 
-Compile `alloc.c` with `hipcc alloc.cc -o alloc.so -shared -fPIC`.
+Compile `gttalloc.c` with `hipcc gttalloc.cc -o alloc.so -shared -fPIC`.
 
 If `hipcc` is not found, it may reside in `/opt/rocm/bin/hipcc`.
 
@@ -22,3 +22,6 @@ If you have something work or not work with HIP on APUs, please share it in disc
 
 ### Summary
 To be filled...
+
+## 中文指南
+参见 https://typeof.pw/archives/pytorch-on-apu-vram .
