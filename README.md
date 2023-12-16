@@ -1,3 +1,7 @@
+# Note to anyone who happens to stumble upon this repo
+This allocator actually does not allow ROCm to make use of the GTT, but rather, actually allocates host memory.
+From my testing on radeon 680m integrated graphics, `hipHostMalloc()` seems to perform the same as allocating directly on the device, but starts drastically slowing down when the total memory allocation is higher than what the integrated graphics have dedicated. Unfortunately, this most likely isn't the fix you wished for, but it seemed to at least work from my testing.
+
 # PyTorch Host Allocator for APUs
 
 ROCm does not take GTT into account when calculating usable VRAM on APU platforms.
